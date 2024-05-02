@@ -41,29 +41,26 @@ function App() {
         sequence.forEach((note, index) => {
             setTimeout(() => {
                 playNoteAndHighlight(note);
-            }, index * 500); // Espera 500ms entre cada nota
+            }, index * 1000); // Espera 500ms entre cada nota
         });
     };
 
     const playNoteAndHighlight = (midiNumber) => {
         // Reproduce la nota
         console.log('Reproduciendo nota:', midiNumber);
-        // Aquí deberías llamar a tu función playNote() para reproducir la nota
 
-        // Destaca la tecla
         setHighlightedNotes((prevNotes) => [...prevNotes, midiNumber]);
         setTimeout(() => {
             setHighlightedNotes((prevNotes) => prevNotes.filter((note) => note !== midiNumber));
-        }, 300); // Apaga el resaltado después de 300ms
+        }, 800); // Apaga el resaltado después de 300ms
     };
 
     const handleUserTurn = () => {
         setUserTurn(true);
-        setUserSequence([]); // Reinicia la secuencia del usuario
+        setUserSequence([]);
     };
 
     const handleUserSequence = (midiNumber) => {
-        // Si es el turno del usuario, añadir la nota seleccionada por el usuario al estado
         if (userTurn) {
             setUserSequence((prevSequence) => [...prevSequence, midiNumber]);
         }
@@ -84,33 +81,36 @@ function App() {
     };
 
     return (
-        <div>
+        <div className="bg-gradient-to-r from-slate-400 via-slate-900 to-slate-400 font-mono">
             <div className="min-w-screen min-h-screen flex flex-col justify-center items-center">
+
+                <div className="text-7xl mb-11 text-white">
+                    <h1 className="hover:text-orange-300">Piano Game Test</h1>
+                </div>
+                
                 <ResponsivePiano className="PianoDarkTheme" activeNotes={highlightedNotes}
                                  onPlayNote={handleUserSequence}/>
-                <div className="flex flex-row">
-                    <div className="w-2/5">
+                
+
+                <div className="flex flex-row mt-5 w-full">
+                    <div className="w-2/5 flex flex-col gap-4 items-center">
                         <button onClick={playRandomSequence}
-                                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Reproducir
-                            secuencia aleatoria
+                                className="bg-gray-700 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded w-1/2 hover:shadow-lg hover:shadow-orange-300">Reproducción Aleatoria
                         </button>
                         <button onClick={handleUserTurn}
-                                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Tu
-                            turno
+                                className="bg-gray-700 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded w-1/2 hover:shadow-lg hover:shadow-orange-300">Tu Turno
                         </button>
                     </div>
-                    <div className="w-2/5">
+                    <div className="w-2/5 flex flex-col gap-4 items-center">
                         <button onClick={compareSequences}
-                                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Comprobar
-                            errores
+                                className="bg-gray-700 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded w-1/2 hover:shadow-lg hover:shadow-orange-300">Comprobar Errores
                         </button>
                         <button onClick={resetErrorCount}
-                                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Reiniciar
-                            contador de errores
+                                className="bg-gray-700 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded w-1/2 hover:shadow-lg hover:shadow-orange-300">Reiniciar Contador
                         </button>
                     </div>
-                    <div className="w-1/5">
-                        <h1>Errores: {errorCount}</h1>
+                    <div className="w-1/5 flex items-center">
+                        <h1 className="text-5xl text-purple-950 hover:text-orange-300">Errores: {errorCount}</h1>
                     </div>
 
                 </div>

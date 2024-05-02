@@ -1,19 +1,27 @@
-/* styles.css */
 .PianoDarkTheme .ReactPiano__Key--accidental {
-    background: #2C3E50; /* Dark Grey */
+    background: #2C3E50; 
     border: 1px solid #888;
 }
 
 .PianoDarkTheme .ReactPiano__Key--natural {
-    background: #ECF0F1; /* Light Grey */
+    background: #ECF0F1; 
     border: 1px solid #888;
     margin-right: 0;
 }
 
 .PianoDarkTheme .ReactPiano__Key--active.ReactPiano__Key--accidental {
-    background: #E74C3C; /* Red */
+    background: #581845;
+    box-shadow: 0px 10px 10px 10px #8A5E95;
 }
 
 .PianoDarkTheme .ReactPiano__Key--active.ReactPiano__Key--natural {
-    background: #E74C3C; /* Red */
+    background: #581845; 
+    box-shadow: 0px 10px 10px 10px #8A5E95;
+}
+
+.PianoDarkTheme {
+    background: #2C3E50;
+    border: 20px solid #94a3b8;
+    border-radius: 5px;
+    padding: 10px;
 }

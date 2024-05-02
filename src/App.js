@@ -95,18 +95,18 @@ function App() {
                 <div className="flex flex-row mt-5 w-full">
                     <div className="w-2/5 flex flex-col gap-4 items-center">
                         <button onClick={playRandomSequence}
-                                className="bg-gray-700 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded w-1/2 hover:shadow-lg hover:shadow-orange-300">Reproducción Aleatoria
+                                className="text-orange-300 bg-gray-700 hover:bg-gray-500 hover:text-white font-bold py-2 px-4 rounded w-1/2 hover:shadow-lg hover:shadow-orange-300">Reproducción Aleatoria
                         </button>
                         <button onClick={handleUserTurn}
-                                className="bg-gray-700 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded w-1/2 hover:shadow-lg hover:shadow-orange-300">Tu Turno
+                                className="text-orange-300 bg-gray-700 hover:bg-gray-500 hover:text-white font-bold py-2 px-4 rounded w-1/2 hover:shadow-lg hover:shadow-orange-300">Tu Turno
                         </button>
                     </div>
                     <div className="w-2/5 flex flex-col gap-4 items-center">
                         <button onClick={compareSequences}
-                                className="bg-gray-700 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded w-1/2 hover:shadow-lg hover:shadow-orange-300">Comprobar Errores
+                                className="text-orange-300 bg-gray-700 hover:bg-gray-500 hover:text-white font-bold py-2 px-4 rounded w-1/2 hover:shadow-lg hover:shadow-orange-300">Comprobar Errores
                         </button>
                         <button onClick={resetErrorCount}
-                                className="bg-gray-700 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded w-1/2 hover:shadow-lg hover:shadow-orange-300">Reiniciar Contador
+                                className="text-orange-300 bg-gray-700 hover:bg-gray-500 hover:text-white font-bold py-2 px-4 rounded w-1/2 hover:shadow-lg hover:shadow-orange-300">Reiniciar Contador
                         </button>
                     </div>
                     <div className="w-1/5 flex items-center">
